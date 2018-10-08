@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="cs246---lecture-9---oct-4-2018">CS246 - Lecture 9 - Oct 4, 2018</h1>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+    <span class="hljs-keyword">int</span> assns, mt, final;
+    <span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">grade</span><span class="hljs-params">()</span></span>;
+    
+    <span class="hljs-keyword">float</span> Student::grade(){
+        <span class="hljs-keyword">return</span> assns * <span class="hljs-number">0.4</span> + mt * <span class="hljs-number">0.2</span> + final * <span class="hljs-number">0.4</span>;
+    }
+}
+</div></code></pre>
+<p>What do <code>assns</code>, <code>mt</code>, <code>final</code> mean inside of <code>student::grade</code>?</p>
+<p>They are fields of the <strong>current</strong> object - the object upon which grade was called.</p>
+<p>eg.</p>
+<pre class="hljs"><code><div>Student billy {...}
+billy.grade(); <span class="hljs-comment">//method call uses billy's assn, mt, final</span>
+</div></code></pre>
+<p><strong>Fomally:</strong> methods to take hidden extra parameter called this <code>this</code> - Ptr to the object which the method was called.</p>
+<p><strong>Eg.</strong></p>
+<pre class="hljs"><code><div>billy.grade();
+</div></code></pre>
+<p><strong>Note:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">this</span> == &amp;billy
+</div></code></pre>
+<p>So we can write:</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">student</span> {</span>
+    ...
+    <span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">grade</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;assns * <span class="hljs-number">0.4</span> + <span class="hljs-keyword">this</span>-&gt;mt * <span class="hljs-number">0.2</span> + <span class="hljs-keyword">this</span>-&gt;final * <span class="hljs-number">0.4</span>;
+    }
+};
+</div></code></pre>
+<p><strong>Note:</strong> Methods can be written in the class. We will often do this for brevity. You should put implementations in .cc files.</p>
+<h2 id="initializing-objects">Initializing Objects:</h2>
+<pre class="hljs"><code><div>Student billy {<span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>}; <span class="hljs-comment">// C-style struct initialization Ok, but limited</span>
+</div></code></pre>
+<p><strong>Better:</strong> Write a method that initializes - a <strong>constructor</strong></p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+  <span class="hljs-keyword">int</span> assigns, mt, final;
+  <span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">grade</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> assigns * <span class="hljs-number">0.4</span> + mt * <span class="hljs-number">0.2</span> + final * <span class="hljs-number">0.4</span>;
+  }
+
+  Student (<span class="hljs-keyword">int</span> assigns, <span class="hljs-keyword">int</span> mt, <span class="hljs-keyword">int</span> final) {
+    <span class="hljs-keyword">this</span>-&gt;assigns = assigns;
+    <span class="hljs-keyword">this</span>-&gt;mt = mt;
+    <span class="hljs-keyword">this</span>-&gt;final = final;
+  }
+};
+</div></code></pre>
+<pre class="hljs"><code><div>Student billy {<span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>}; <span class="hljs-comment">//better</span>
+</div></code></pre>
+<ul>
+<li>If a constructor has been defined, those arguments are passed to the constructor</li>
+<li>If <strong>no</strong> char has been defined, these initialize the individual fields of <code>Student</code>.</li>
+</ul>
+<p><strong>OR</strong></p>
+<pre class="hljs"><code><div>Student billy = Student {<span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>};
+</div></code></pre>
+<h3 id="heap-allocation">Heap allocation</h3>
+<pre class="hljs"><code><div>Student * pBilly = <span class="hljs-keyword">new</span> Student {<span class="hljs-number">70</span>,  <span class="hljs-number">80</span>, <span class="hljs-number">90</span>};
+</div></code></pre>
+<h3 id="advantages-of-constructors">Advantages of constructors:</h3>
+<ul>
+<li>default params</li>
+<li>overloading</li>
+<li>sanity checks</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+    ...
+    Student (<span class="hljs-keyword">int</span> assns = <span class="hljs-number">0</span>, <span class="hljs-keyword">int</span> mt = <span class="hljs-number">0</span>, <span class="hljs-keyword">int</span> final = <span class="hljs-number">0</span>) {
+        ...
+    }
+};
+</div></code></pre>
+<pre class="hljs"><code><div>Student jane {<span class="hljs-number">70</span>, <span class="hljs-number">80</span>}, <span class="hljs-comment">//70, 80, 0</span>
+</div></code></pre>
+<p><strong>Note:</strong> Every class comes with a defualt (ie. zero-arg) constructor (which just default contructs all fields that are objects)</p>
+<p><strong>Eg.</strong></p>
+<pre class="hljs"><code><div>Vec v;  <span class="hljs-comment">// default  ctor (does nothing in this case). </span>
+        <span class="hljs-comment">// But the built in default ctor goes away if you write any ctors.</span>
+</div></code></pre>
+<p><strong>Eg</strong></p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Vec</span> {</span>
+    <span class="hljs-keyword">int</span> x, y;
+    
+    Vec (<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y) {
+        <span class="hljs-keyword">this</span>-&gt;x = x;
+        <span class="hljs-keyword">this</span>-&gt;y = y;
+    }
+};
+</div></code></pre>
+<pre class="hljs"><code><div>Vec v; <span class="hljs-comment">// Error!</span>
+Vec v {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>}; <span class="hljs-comment">// OK</span>
+</div></code></pre>
+<h3 id="what-if-a-struct-contains-constants-or-refs">What if a struct contains constants or refs?</h3>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> myconst; <span class="hljs-comment">// must be initilized</span>
+    <span class="hljs-keyword">int</span> &amp;myREF; <span class="hljs-comment">// must be initilized</span>
+}
+</div></code></pre>
+<pre class="hljs"><code><div>
+<span class="hljs-comment">// So initialize:</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> myConst = <span class="hljs-number">5</span>;
+  <span class="hljs-keyword">int</span> z;
+  <span class="hljs-keyword">int</span> &amp;myRef = z;
+};
+</div></code></pre>
+<p>But does <strong>every</strong> instance of <code>MyStruct</code> nweed to have the <strong>same</strong> value of <code>myConst</code>, etc?</p>
+<p><strong>Eg.</strong></p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> id; <span class="hljs-comment">//constant (doesn't change) but not the same for all students!</span>
+};
+</div></code></pre>
+<h3 id="when-do-we-initialize">When do we initialize?</h3>
+<p>(ctor body? - too late - fields must be fully constructed by then)</p>
+<h3 id="what-happens-when-an-object-is-created">What happens when an object is created?</h3>
+<ol>
+<li>Space is allocated</li>
+<li>Fields are constructed in declaration order - need to put on initialization heap (ctor run for fields that are objects)</li>
+<li>Ctor body runs</li>
+</ol>
+<p>How?</p>
+<h2 id="member-initialization-list-mil">Member Initialization List (MIL)</h2>
+<pre class="hljs"><code><div> Student(<span class="hljs-keyword">int</span> assigns, <span class="hljs-keyword">int</span> mt, <span class="hljs-keyword">int</span> final):
+     assigns{assigns}, mt{mt}, final{final} {}
+ <span class="hljs-comment">//    ^        ^</span>
+ <span class="hljs-comment">//  fields   parameters</span>
+</div></code></pre>
+<h3 id="this-is-step-2">This is step 2:</h3>
+<pre class="hljs"><code><div>Student(<span class="hljs-keyword">int</span> assigns, <span class="hljs-keyword">int</span> mt, <span class="hljs-keyword">int</span> final):
+</div></code></pre>
+<h3 id="this-is-step-3">This is step 3:</h3>
+<pre class="hljs"><code><div>{}
+</div></code></pre>
+<p><strong>Note:</strong> can initialize <strong>any</strong> field this way, not just consts/refs.</p>
+<p><strong>Note:</strong> Fields <strong>always</strong> initialized in <strong>declaration order,</strong> even if the MIL orders them differently.</p>
+<h3 id="mil---sometimes-more-efficient-than-setting-fields-in-the-body">MIL - sometimes more efficient than setting fields in the body</h3>
+<p>(otherwise runs default ctor in step 2, then reassign in step 3)</p>
+<pre class="hljs"><code><div> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+     <span class="hljs-built_in">string</span> name;
+     ...
+ }
+</div></code></pre>
+<h3 id="what-if-a-field-is-initialized-inline-and-in-the-mil">What if a field is initialized inline <strong>AND</strong> in the MIL?</h3>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Vec</span> {</span>
+    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>, y = <span class="hljs-number">0</span>;
+
+    Vec (<span class="hljs-keyword">int</span> x): x {x} {}
+}
+</div></code></pre>
+<h3 id="mil-takes-precedence-inline-field-construction-is-only-performed-if-the-field-is-not-mentioned-in-the-mil">MIL takes precedence. Inline Field construction is only performed if the field is not mentioned in the MIL.</h3>
+<p>Now consider:</p>
+<pre class="hljs"><code><div>Student billy {<span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>};
+Student bobby = billy; <span class="hljs-comment">// How does this initialization happen?</span>
+</div></code></pre>
+<p><strong>Note:</strong> Every class comes with:</p>
+<ul>
+<li>default constructor (default-constructs all fields that are objects)</li>
+<li>copy ctor (just copies all fields)</li>
+<li>The <strong>copy constructor</strong> - for creating one object as a copy of another.</li>
+<li>copy assignment operator</li>
+<li>destructor</li>
+<li>more ctor</li>
+<li>more assignment operator</li>
+</ul>
+<h2 id="building-your-own-copy-ctor">Building your own copy ctor:</h2>
+<pre class="hljs"><code><div> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Student</span> {</span>
+    <span class="hljs-keyword">int</span> assns, mt, final;
+    ...
+    student ( <span class="hljs-keyword">const</span> stduent &amp;other): 
+    assn{other.assn}, mt{other.mt}, final{other.final} {}
+}; <span class="hljs-comment">//equiv to built-in</span>
+</div></code></pre>
+<h3 id="when-the-built-in-copy-ctor-is-not-correct">When the built-in copy ctor is not correct?</h3>
+<p>Consider</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+    <span class="hljs-keyword">int</span> data;
+    Node *next;
+}; <span class="hljs-comment">//built-in copy ctor.</span>
+
+Node *n = <span class="hljs-keyword">new</span> Node {<span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> Node{ <span class="hljs-number">3</span>, <span class="hljs-keyword">new</span> Node{ <span class="hljs-number">3</span> <span class="hljs-literal">nullptr</span>}}};
+
+Node m = *n; <span class="hljs-comment">//copy ctor.</span>
+Node *p = <span class="hljs-keyword">new</span> Node{*n};
+</div></code></pre>
+<h2 id="linked-list-diagram">Linked list Diagram</h2>
+<p><img src="file:///d%3A/Users/Surien/Documents/%231%20University%20Courses/CS%20246/Notes/NOTES-CS246/Images/cs246_Oct4_linked_list_diagram.jpg" alt="Linked List Diagram" title="Linked List Diagram Picture"></p>
+<p>Simple copy of fields -&gt; only the first node is actually copied (shallow copy)</p>
+<p>If you want deep copy (copies the whole list), must write your own copy ctor.</p>
+
+    </body>
+    </html>
