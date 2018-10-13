@@ -254,7 +254,7 @@ Node *p = new Node{*n};
 
 ## Linked list Diagram
 
-![Linked List Diagram](Images/cs246_Oct4_linked_list_diagram.jpg "Linked List Diagram Picture")
+![Linked List Diagram](/Images/cs246_Oct4_linked_list_diagram.jpg "Linked List Diagram Picture")
 
 Simple copy of fields -> only the first node is actually copied (shallow copy)
 
