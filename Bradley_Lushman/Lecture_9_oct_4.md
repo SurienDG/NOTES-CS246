@@ -256,6 +256,6 @@ Node *p = new Node{*n};
 
 ![Linked List Diagram](Images/cs246_Oct4_linked_list_diagram.jpg "Linked List Diagram Picture")
 
-Simple copy of fields -> only the first node i7s actually copied (shallow copy)
+Simple copy of fields -> only the first node is actually copied (shallow copy)
 
 If you want deep copy (copies the whole list), must write your own copy ctor.
