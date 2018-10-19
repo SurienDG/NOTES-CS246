@@ -140,7 +140,7 @@ Or track how many students are created?
 struct Student {
     ...
     static int numStudents;
-    student (-----); ----- {
+    Student (-----): ----- {
         ++numStudents;
     }
 };
