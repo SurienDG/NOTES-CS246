@@ -25,7 +25,7 @@ struct Node {
     }
 
     Node &operator = (const Node &other) {
-        Node tmp = 0; // copy constructor
+        Node tmp = other; // copy constructor
         swap (tmp);
         return *this; // tmp is deleted by going out of scope
     }
