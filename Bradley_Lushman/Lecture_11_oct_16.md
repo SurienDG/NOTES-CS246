@@ -86,7 +86,7 @@ m = plusOne (n); // assignment from a temp
 Again, to avoid copy from the temp whose data is about to be deleted, write a, **move assignment operator**.
 
 ```C++
-Node &operator (Node &&other) { // steal other's data, and other will be destroyed
+Node &operator = (Node &&other) { // steal other's data, and other will be destroyed
     using std::swap;
     swap (data, other.data);
     swap (next, other.next);
