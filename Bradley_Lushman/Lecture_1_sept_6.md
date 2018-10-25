@@ -21,7 +21,7 @@ www.student.cs.uwaterloo.ca/password
 
 `cat` - displays the contents of a file
 
-![catFile Diagram](/Images/CS246_Sept6_catFile.jpg "catFile")
+![catFile Diagram](Images/CS246_Sept6_catFile.jpg "catFile")
 
 In linux a directory is just a special kind of file.
 
