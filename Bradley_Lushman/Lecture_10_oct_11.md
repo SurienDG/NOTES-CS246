@@ -5,7 +5,7 @@ Node *n = new Node {1, new Node{2, new Node{3,nullptr}}};
 Node m = *n;
 Node *p = new Node {*n};
 ```
-![Linked List Diagram2](Images/CS246_Oct11_mem_diagram2.jpg "Linked List Diagram Picture2")
+![Linked List Diagram1](Images/CS246_Oct11_mem_diagram1.jpg "Linked List Diagram Picture1")
 
 If you want a **deep copy** (copies the whole list), must write your own ctor
 
@@ -91,7 +91,7 @@ If `np` goes out of scope
 
 If we say delete `np`; - calls *`np`'s dtor,
 
-![Linked List Diagram1](Images/CS246_Oct11_mem_diagram1.jpg "Linked List Diagram Picture1")
+![Linked List Diagram2](Images/CS246_Oct11_mem_diagram2.jpg "Linked List Diagram Picture2")
 
 Write a dtor to ensure the whole list is freed:
 
