@@ -180,25 +180,19 @@ Class List {
     <th> Modelling Classes </th>
     <th>Notes/Explanation </th></tr>
   <tr>
-  <td>
-
-|           |
-|:---------:|
-|     Vec   |
-|-x: Integer <br> -y: Integer| 
-|+ get x: Integer <br> + get y: Integer|
-
-</td><td>
-
-|           |
-|:---------:|
-|     Name  |
-| <br> Fields (optional) | 
-|Methods (Optional)|
-
-</td>
-</tr>
-</table>
+  <tr>
+    <td align = center> Vec </td>
+    <td align = center> Name </td>
+  </tr>
+  <tr>
+    <td align = center> -x: Integer <br> -y: Integer </td>
+    <td align = center> Fields (optional) </td>
+  </tr>
+  <tr>
+    <td align = center> + get x: Integer <br> + get y: Integer </td>
+    <td align = center> Methods (Optional) </td>
+  </tr>
+  </table>
 
 - `-` means private visibility
 - `+` means public visibility
