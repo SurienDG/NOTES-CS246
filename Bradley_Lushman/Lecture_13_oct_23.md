@@ -66,7 +66,7 @@ for (int *p = curr; p != arr + size; p++) {
 
 ```C++
 Class List {
-    struct node;
+    struct Node;
     Node *theList = nullptr;
 
     public:
@@ -75,10 +75,137 @@ Class List {
 
             public:
                 explicit Iterator (Node *p) : p{p} {}
-                int &operator *() {return p->data;}
-                Iterator & operator ++ () {p = p->next; return *this;}
+                int &operator *() {
+                    return p->data;
+                  }
+                Iterator & operator ++ () {
+                    p = p->next; 
+                    return *this;
+                  }
+                bool operator != (const Iterator &other) {
+                    return p != other.p;
+                }
+        }; // end of class Iterator - note all are O(1) so fixes our traversing problem while keeping encapsulation
 
+        Iterator begin () {
+          return Iterator {theList}; 
         }
+        Iterator end () {
+          return Iterator {nullptr}; // used to compare when iterating over list so we know when to stop
+        }
+        ... // other List methods
 }
 ```
+Example of using this from client:
+
+```C++
+int main () {
+  List l;
+  l.addToFront(1);
+  l.addToFront(2);
+  l.addToFront(3);
+  
+  for (List::Iterator it = &begin(); it != l.end(); ++it) {
+    cout << *it << endl;  // O(n) traversal
+  }
+}
+
+### Shortcut : Automatic Type Declarations
+```C++
+auto x = y; // declares x to have the same types its initializer (in this case y)
+```
+**Eg.**
+```C++
+for (auto it = l.begin(); it != l.end(); ++it) {
+
+}
+```
+### Shortcut : Range based for loop/For-each loop
+```C++
+for (auto n:l) {
+  cout << n << endl;
+}
+```
+### Is Avaliable for any class with:
+- methods "begin" and "end" that produces an iterators (doesn't have to be called "Iterator")
+- Iterator **must** support `!=`, prefix `++`, and unary `*`
+- or default supported
+
+If you want to mutate list items (or save copying - save the memory used by copying):
+```C++
+for (auto &n:l) {
+  ++n;
+}
+```
+
+## Encapsulation Continued:
+List clients can create iterators directly:
+```C++
+auto it = List::Iterator {nullptr};
+```
+- violates encapsulation - client should be using begin/end
+
+### We could:
+- make Iterator's ctor private 
+- then client can't call `List::Iterator {____}` -> but neither can `List`
+
+**Soln:**
+- give `List` priviliged access to iterator
+- make it a friend
+
+```C++
+Class List {
+  ...
+  public:
+    class Iterator {
+      Node *p;
+      explicit iterator;  
+
+      public:
+        friend class Lists;
+    };
+};
+```
+**Note:** Getters/setters called accessor/mutators
+
+## System Modelling
+
+- Visualize structure of the system (abstraction + relationships among them) to aid design and implementation
+
+### Popular standard: UML (Unified Modelling Language) 
+
+
+<table>
+  <tr>
+    <th> Modelling Classes </th>
+    <th>Notes/Explanation </th></tr>
+  <tr>
+  <td>
+
+|           |
+|:---------:|
+|     Vec   |
+|-x: Integer <br> -y: Integer| 
+|+ get x: Integer <br> + get y: Integer|
+
+</td><td>
+
+|           |
+|:---------:|
+|     Name  |
+| <br> Fields (optional) | 
+|Methods (Optional)|
+
+</td>
+</tr>
+</table>
+
+- `-` means private visibility
+- `+` means public visibility
+
+
+
+
+
+
 
