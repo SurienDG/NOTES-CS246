@@ -177,11 +177,12 @@ Class List {
 
 <table>
 <tr>
+        <th> Modelling Classes </th>
+        <th>Notes/Explanation </th>
+</tr>
+<tr>
   <td>
     <table>
-      <tr>
-        <th> Modelling Classes </th>
-      <tr>
       <tr>
         <td align = center> Vec </td>
       </tr>
@@ -195,9 +196,6 @@ Class List {
     </td>
      <td>
       <table>
-        <tr>
-          <th>Notes/Explanation </th></tr>
-        <tr>
         <tr>
           <td align = center> Name </td>
         </tr>
