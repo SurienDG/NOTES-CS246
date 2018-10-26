@@ -192,7 +192,7 @@ Class List {
         <td align = center height = 45px> + get x: Integer <br> + get y: Integer </td>
       </tr>
       </table>
-    <td>
+    </td>
      <td>
       <table>
         <tr>
@@ -208,8 +208,7 @@ Class List {
           <td align = center height = 45px> Methods (Optional) </td>
         </tr>
         </table>
-      <td>
-  
+      </td>
   <tr>
   </table>
 
