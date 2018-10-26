@@ -186,10 +186,10 @@ Class List {
         <td align = center> Vec </td>
       </tr>
       <tr>
-        <td align = center height = 45px> -x: Integer <br> -y: Integer </td>
+        <td align = center height = 70px> -x: Integer <br> -y: Integer </td>
       </tr>
       <tr>
-        <td align = center height = 45px> + get x: Integer <br> + get y: Integer </td>
+        <td align = center height = 70px> + get x: Integer <br> + get y: Integer </td>
       </tr>
       </table>
     </td>
@@ -202,10 +202,10 @@ Class List {
           <td align = center> Name </td>
         </tr>
         <tr>
-          <td align = center height = 45px> Fields (optional) </td>
+          <td align = center height = 70px> Fields (optional) </td>
         </tr>
         <tr>
-          <td align = center height = 45px> Methods (Optional) </td>
+          <td align = center height = 70px> Methods (Optional) </td>
         </tr>
         </table>
       </td>
