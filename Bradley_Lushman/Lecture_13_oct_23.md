@@ -176,22 +176,41 @@ Class List {
 
 
 <table>
+<tr>
+  <td>
+    <table>
+      <tr>
+        <th> Modelling Classes </th>
+      <tr>
+      <tr>
+        <td align = center> Vec </td>
+      </tr>
+      <tr>
+        <td align = center height = 45px> -x: Integer <br> -y: Integer </td>
+      </tr>
+      <tr>
+        <td align = center height = 45px> + get x: Integer <br> + get y: Integer </td>
+      </tr>
+      </table>
+    <td>
+     <td>
+      <table>
+        <tr>
+          <th>Notes/Explanation </th></tr>
+        <tr>
+        <tr>
+          <td align = center> Name </td>
+        </tr>
+        <tr>
+          <td align = center height = 45px> Fields (optional) </td>
+        </tr>
+        <tr>
+          <td align = center height = 45px> Methods (Optional) </td>
+        </tr>
+        </table>
+      <td>
+  
   <tr>
-    <th> Modelling Classes </th>
-    <th>Notes/Explanation </th></tr>
-  <tr>
-  <tr>
-    <td align = center> Vec </td>
-    <td align = center> Name </td>
-  </tr>
-  <tr>
-    <td align = center> -x: Integer <br> -y: Integer </td>
-    <td align = center> Fields (optional) </td>
-  </tr>
-  <tr>
-    <td align = center> + get x: Integer <br> + get y: Integer </td>
-    <td align = center> Methods (Optional) </td>
-  </tr>
   </table>
 
 - `-` means private visibility
