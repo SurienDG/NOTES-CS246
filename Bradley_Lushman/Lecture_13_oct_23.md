@@ -150,7 +150,7 @@ auto it = List::Iterator {nullptr};
 - make Iterator's ctor private 
 - then client can't call `List::Iterator {____}` -> but neither can `List`
 
-**Soln:**
+### Soln
 - give `List` priviliged access to iterator
 - make it a friend
 
@@ -173,7 +173,7 @@ Now List can still create iterators but the client can only create iterators by 
 - Give your classes as few friends as possible - weakens encapsulation
 - Maintaining classes becomes harder due to larger scope
 
-### Solution:
+### Soln:
 Provide access to private fields by writing accessor/mutator methods:
 ```C++
 class Vec {
