@@ -55,7 +55,7 @@ Therefore, we **can** guarentee the invarient that next is always nullptr or all
 ### Soln: Iterator Pattern
 - Create a class that manages access to nodes
     - Abstraction of a pointer
-    - Can use to walk the list without exposing the external pointers
+    - Can use to walk the list without exposing the actual pointers
   
 ### Aside:
 ```C++
