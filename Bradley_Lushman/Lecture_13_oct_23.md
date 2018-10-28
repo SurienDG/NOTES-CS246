@@ -109,8 +109,9 @@ int main () {
     cout << *it << endl;  // O(n) traversal
   }
 }
-
+```
 ### Shortcut : Automatic Type Declarations
+
 ```C++
 auto x = y; // declares x to have the same types its initializer (in this case y)
 ```
