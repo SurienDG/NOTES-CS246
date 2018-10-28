@@ -52,7 +52,7 @@ Embedding one obj (e.g. `Vec`) inside another (Basis) called **composition**
 
 **Implementation** - **usually** as a composition of classes
 
-### Modeling:
+#### Modeling:
 
 ![UML Diagram1](Images/cs246_Oct25_UML_Modeling_Diagram1.jpg "UML ownership")
 
@@ -71,7 +71,7 @@ If A "has a" B, then typically,
 
 **Ex.** Ducks in a pond. Parts in a catalogue. 
 
-UML:
+#### UML:
 
 ![UML Diagram2](Images/cs246_Oct25_UML_Modeling_Diagram2.jpg "UML relationship")
 
@@ -269,7 +269,7 @@ Relationship between Text, Comic, Book is called a “is a”
 - A Text “is a” Book
 - A Comic “is a” Book
 
-UML:
+#### UML:
 
 ![UML Diagram3](Images/cs246_Oct25_UML_Modeling_Diagram3.jpg "UML \"is a\" relationship")
 
