@@ -163,11 +163,48 @@ Class List {
       explicit Iterator;  
       ...
       public:
+      ...
         friend class Lists;
     };
 };
 ```
-**Note:** Getters/setters called accessor/mutators
+Now List can still create iterators but the client can only create iterators by calling `begin()` and `end()`.
+
+- Give your classes as few friends as possible - weakens encapsulation
+- Maintaining classes becomes harder due to larger scope
+
+### Solution:
+Provide access to private fields by writing accessor/mutator methods:
+```C++
+class Vec {
+    int x, y; 
+  public:
+    ...
+
+    int getX() const { return x; }	// accessor
+    void setY(int z) { y = z; }	// mutator	
+// this class is the actual one that determines what to set Y to, or even do at all
+}
+```
+`operator<<()` needs `x` and `y`, but shouldn't be a member
+  - if `getX`, `getY` -okay
+  - but if you don't want to provide getX or getY
+    - make `operator <<` a friend fn.
+
+> class.h
+```C++
+class Vec {
+  ...
+  friend std::ostream &operator<<(std::ostream &out, const Vec &v);
+  // this is a standalone friend that has been declared, not a method
+}
+```
+> class.cc
+```C++
+std::ostream &operator<<(std::ostream &out, const Vec &v) {
+	return out << v.x << ' ' << v.y;
+}
+```
 
 ## System Modelling
 
