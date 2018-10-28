@@ -29,7 +29,8 @@ Basis b; // X doesn't compile
 class Basis {
 	Vec v1, v2;
 public:
-	Basis() : v1{1,0}, v2{0,1} {}	// HAS TO BE IN THE MIL since it would be too late to do it in the ctor body
+	Basis() : v1{1,0}, v2{0,1} {}	
+  // HAS TO BE IN THE MIL since it would be too late to do it in the ctor body
 };
 ```
 ## Composition
