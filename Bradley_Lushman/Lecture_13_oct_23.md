@@ -118,13 +118,13 @@ auto x = y; // declares x to have the same types its initializer (in this case y
 **Eg.**
 ```C++
 for (auto it = l.begin(); it != l.end(); ++it) {
-
+    cout << *it << endl;
 }
 ```
 ### Shortcut : Range based for loop/For-each loop
 ```C++
 for (auto n:l) {
-  cout << n << endl;
+  cout << n << endl; // this is only a copy of the items
 }
 ```
 ### Is Avaliable for any class with:
@@ -160,8 +160,8 @@ Class List {
   public:
     class Iterator {
       Node *p;
-      explicit iterator;  
-
+      explicit Iterator;  
+      ...
       public:
         friend class Lists;
     };
