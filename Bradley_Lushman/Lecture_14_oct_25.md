@@ -53,7 +53,7 @@ Embedding one obj (e.g. `Vec`) inside another (Basis) called **composition**
 
 ### Modeling:
 
-Insert image
+![UML Diagram1](Images/cs246_Oct25_UML_Modeling_Diagram1.jpg "UML ownership")
 
 ## Aggregation - "has a" Relationship
 
@@ -72,7 +72,7 @@ If A "has a" B, then typically,
 
 UML:
 
-insert picture
+![UML Diagram2](Images/cs246_Oct25_UML_Modeling_Diagram2.jpg "UML relationship")
 
 ### Typical implemention: pointer fields
 ```C++
@@ -187,7 +187,8 @@ Any method that can be called on Book can be called on Text, Comic.
 class Text : public Book {
     string topic;
   public:
-    Text (string title, string author, int length, string topic) : title{title}, author{author}, length{length}, topic{topic} {}	// THIS IS WRONG
+    Text (string title, string author, int length, string topic) :
+     title{title}, author{author}, length{length}, topic{topic} {}	// THIS IS WRONG
 	...
 };
 ```
@@ -213,12 +214,68 @@ class Text : public Book {
       Text (string title, string author, int length, string topic) :
        Book{title, author, length}, topic{topic} {}
                ^                       ^
-             Step 2                  Step 3
+     //      Step 2                  Step 3
       ...
 };
 ```
+If the superclass does not have a default ctor, subclass **MUST** invoke a superclass ctor in its MIL.
 
 
+**Q:** what if the superclass does have a default ctor?
+
+**A:** Good reason to keep superclass fields inaccessible to subclasses.
+If you want to give the subclass access to certain members, you can use *protected* visibility.
+
+**Eg.**
+```C++
+class Book {
+  protected: // protected means accessible to book and it's subclasses
+    string title, author;
+    int length;
+public:
+	...
+};
+
+class Text : public Book {
+    ...
+  public:
+    void addAuthor(string a) { author += a; } 
+    // Ok (i.e. it works) but not good idea
+    ...
+};
+```
+It is not a good idea to give subclasses unlimited access to fields
+
+**Better:**
+- keep fields private
+- provide protected accessors/mutators
+
+```C++
+class Book {
+    string title, author;
+    int length;
+
+  protected:
+    string getTitle() const; // subclasses can call
+    void getAuthor(string newAuthor); // subclasses can call
+
+  public:
+    Book();
+    bool isHeavy() const;
+};
+```
+Relationship between Text, Comic, Book is called a “is a”
+- A Text “is a” Book
+- A Comic “is a” Book
+
+UML:
+
+![UML Diagram3](Images/cs246_Oct25_UML_Modeling_Diagram3.jpg "UML \"is a\" relationship")
+
+Now consider the method `isHeavy` - When is book heavy?
+- for ordinary books > 200 pages
+- for Texts > 500 pages
+- for Comics > 30 pages
 
 
 
