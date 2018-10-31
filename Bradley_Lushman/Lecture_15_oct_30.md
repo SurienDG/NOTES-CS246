@@ -42,7 +42,7 @@ Book b = Comic {______, ______, 40, ______};
 **A:** No - `b` is not heavy Book::isHeavy runs
 
 **Why?**
-insert image
+![Slice Diagram](Images/CS246_Oct30_slice.jpg "diagram showing a slice")
 ```C++
 b=c;
 ```
@@ -147,7 +147,7 @@ B myArray[2] = {{1, 2, 3}, {4, 5, 6}};
 f(myArray);
 ```
 
-insert image
+![Misaligned array](Images/CS246_Oct30_misaligned_array_data.jpg "data in array is misaligned")
 
 Data is misaligned.
 
