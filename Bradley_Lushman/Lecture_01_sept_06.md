@@ -2,7 +2,7 @@
 
 ## Module 1: Linux Shell
 
-shell: interface to the OS - gte OS to run program/manage files/etc
+shell: interface to the OS - get OS to run program/manage files/etc
 
 - graphical {click/touch}
 - command-line-type commands at a prompt
