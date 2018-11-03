@@ -181,7 +181,7 @@ If virtual - allows mixed assignment.
 
 Rewrite the hierarchy:
 
-insert image
+![Book UML](Images/CS246_Nov1_bookUML.jpg "diagram showing book hierarchy")
 
 ```C++
 class Abstract Book {
