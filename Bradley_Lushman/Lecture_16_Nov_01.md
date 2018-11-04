@@ -85,7 +85,7 @@ Text &Text::operator = (const Text &other) {
   return *this;
 }
 
-```C++
+
 Text::Text (Text &&other) : Book {other}, topic {other.topic} {}
 ```
 This is wrong because we aren't moving because other is an lvalue. \
