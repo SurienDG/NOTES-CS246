@@ -187,19 +187,19 @@ Rewrite the hierarchy:
 ![Book UML](Images/CS246_Nov1_bookUML.jpg "diagram showing book hierarchy")
 
 ```C++
-class Abstract Book {
+class AbstractBook {
   string title, author;
   int length;
   
   protected: // prevents assignment through base class pointers from compiling. This means *pb1 = *pb2; won't compile
-    Abstract Book &operator= (const Abstract Book &other);
+    AbstractBook &operator= (const AbstractBook &other);
 
   public:
-    Abstract Book (_____);
+    AbstractBook (_____);
 
     ...
 
-    virtual ~Abstract Book () = 0; // Need at least one pure virtual method. If you don't have one, use the dtor.
+    virtual ~AbstractBook () = 0; // Need at least one pure virtual method. If you don't have one, use the dtor.
 
 }
 
@@ -209,7 +209,7 @@ class NormalBook : public AbstractBook {
     ~NormalBook ();
 
     NormalBook &operator= (const NormalBook &other) {
-      Abstract Book::operator= (other);
+      AbstractBook::operator= (other);
       return *this;
     }
 
@@ -220,7 +220,7 @@ class NormalBook : public AbstractBook {
 **Note**: virtual dtor **MUST** be implemented, even though it is pure virtual.
 
 ```C++
-Abstract Book::~AbstractBook () {}
+AbstractBook::~AbstractBook () {}
 ```
 - because the subclass dtor **WILL** call it.
 
