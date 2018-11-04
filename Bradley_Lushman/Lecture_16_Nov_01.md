@@ -96,7 +96,7 @@ This is wrong because we aren't moving because other is an lvalue. \
 
 Text::Text (Text &&other) : Book {std::move(other)}, topic {std::move (other.topic)} {}
 
-Text &Text::operator = (const Text &other) {
+Text &Text::operator = (Text &&other) {
   Book::operator = (std::move(other));
   topic = std::move(other.topic);
   return *this;
