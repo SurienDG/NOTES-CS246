@@ -238,7 +238,7 @@ class List {
   ...
 }
 ```
-### What if you want to store somethingg else?
+### What if you want to store something else?
 
 We will continue on Tues.
 
