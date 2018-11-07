@@ -21,7 +21,7 @@
 
 ```vim
 let g:ale_c_gcc_executable='g++'
-let g:ale_c_gcc_options='-std=c++14 -Wall -MMD -g -Werror=vla'
+let g:ale_c_gcc_options='-std=c++14 -Wall -MMD -g'
 ```
 
 * [vim-unimpared](https://github.com/tpope/vim-unimpaired) is useful for navigating errors
