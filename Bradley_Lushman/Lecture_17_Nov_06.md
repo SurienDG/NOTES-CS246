@@ -199,13 +199,14 @@ void g()  { f(); }
 void h() { g(); }
 
 int main() {
-	try {
-      h();
-    } 
-    catch (out_of_range r) 
-    { 
+  try 
+  {
+    h();
+  } 
+  catch (out_of_range r) 
+  { 
       ...
-    }
+  }
 }
 ```
 
