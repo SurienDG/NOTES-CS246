@@ -2,7 +2,20 @@
 
 ## Templates
 
-- class parameterized by a type
+```C++
+class List {
+  struct Node {
+    int data;
+    Node * next;
+  };
+  Node *theList;
+};
+```
+
+But what if you want to store something else? A whole new class?
+
+
+**Templates:** class parameterized by a type
 
 ### Stack Class:
 ```C++
@@ -54,7 +67,9 @@ for (List<int>::Iterator it = &1.begin(); it != &1.end(); ++i) {
 ```
 #### OR
 ```C++
-for (auto n:&1) cout << n << endl;
+for (auto n:&1) {
+  cout << n << endl;
+}
 ```
 
 When the C++ sees `List<int>`, it recognizes that it has seen this version of `List` before, so it creates a new class for the specialization using the template for you.
@@ -151,7 +166,7 @@ This is unchecked - if you go out of bounds, it’s undefined behaviour.
 
 But we can write handlers to catch exceptions!
 
-`vector<T>::at` raises the exception std::out_of_range when it fails.
+`vector<T>::at` raises the exception `std::out_of_range` when it fails.
 
 ```C++
 #include <stdexcept>
@@ -161,7 +176,10 @@ But we can write handlers to catch exceptions!
 try {
   cout << v.at(10000);
   ... // do things at success
-} catch (out_of_range r) {
+} 
+catch (out_of_range r) 
+{ //       ^        ^
+  //     class   object
   cerr << “Range error” << r.what() << endl; 
   // do something for range error
 }
@@ -171,7 +189,9 @@ r.what() // - extra information about the error
 #### Now consider:
 ```C++
 void f() {
-  // raises an exception  - throw out_of_range throw out_of_range {“I am ERROR”};	
+  // raises an exception  - throw out_of_range 
+  throw out_of_range {“I am ERROR”};	
+  // ^ is a constructor call. ^ is what .what() will produce
   // the constructor takes in what it will say for what()
 }
 
@@ -181,7 +201,8 @@ void h() { g(); }
 int main() {
 	try {
       h();
-    } catch (out_of_range r) 
+    } 
+    catch (out_of_range r) 
     { 
       ...
     }
