@@ -49,7 +49,7 @@ Can be many different kinds of observer objects - subject should not need to kno
 
 ### Observer patterns:
 
-insert uml diagram
+![Observer pattern UML](Images/CS246_Lecture18_Nov_08_Diagram1.jpg "diagram showing observer pattern")
 
 ### Sequence of method calls
 
@@ -145,7 +145,7 @@ Want to choose these enhancements at runtime.
 
 Decorator Pattern:
 
-insert UML diagram
+![Decorator pattern UML](Images/CS246_Lecture18_Nov_08_Diagram2.jpg "diagram showing decorator pattern")
 
 **Component** 
 - interface - operations your objects will provide. 
