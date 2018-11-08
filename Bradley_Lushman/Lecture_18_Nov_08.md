@@ -54,7 +54,7 @@ insert uml diagram
 ### Sequence of method calls
 
 1. Subject's state is updated
-2. `Subject::notifyObservers() - calls each observer's notify
+2. `Subject::notifyObservers()` - calls each observer's notify
 3. Each observer calls `ConcreteSubject::getState` to query the state and react accordingly
 
 #### Examples:
@@ -169,17 +169,40 @@ insert UML
 
 ```C++
 class Pizza {
-  public:
-
-    virtual float price() const = 0;
-    virtual string desc () const = 0;
-    virtual ~Pizza() {}
+ 
+ public:
+  
+  virtual float price() = 0;
+  virtual std::string description() = 0;
+  virtual ~Pizza();
 };
 
 class CrustAndSauce: public Pizza {
   public:
-    float price()
-}
+    float price() override;
+    std::string description() override;
+};
+
+class Decorator: public Pizza {
+  
+  protected:
+    Pizza *component;
+
+  public:
+    Decorator(Pizza *component): component {component} {}
+    virtual ~Decorator() {delete component;}
+};
+
+class StuffedCrust: public Decorator {
+  public:
+    StuffedCrust(Pizza *component): Decorator{component} {}
+    float price() { return component->price() + 2.69; }
+    
+    std::string description() 
+    {
+       return component->description() + " with stuffed crust";
+    }
+};
 ```
 
 
