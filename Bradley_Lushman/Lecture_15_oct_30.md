@@ -67,7 +67,7 @@ pb->isHeavy(); //false
 Computer uses the type of ptr (or reference) to decide which `isHeavy` to run 
 - doesn't consider the actual type of the object.
 
-Same object behaves differently, depening on what type of ptr accesses it.
+Same object behaves differently, depending on what type of ptr accesses it.
 
 So a Comic is only a Comic when a Comic ptr (or ref) ptrs to it???
 
