@@ -165,7 +165,7 @@ All inherit from `AbstractWindow` so window methods can be used polymorphically 
 
 **Eg** Pizza
 
-insert UML
+![Decorator pattern UML for Pizza](Images/CS246_Lecture18_Nov_08_Diagram3.jpg "diagram showing decorator pattern for Pizza")
 
 ```C++
 class Pizza {
