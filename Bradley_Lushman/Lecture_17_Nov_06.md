@@ -57,17 +57,17 @@ template <typename T> class List {
 // Client
 // I want a list of ints
 List <int> &1;	// this tells it that you want a list of int’s
-List <List <int>> &2;
-&1.addToFront(3);
-&2.addToFront(&1);
+List <List <int>> l2;
+l1.addToFront(3);
+l2.addToFront(&1);
 
-for (List<int>::Iterator it = &1.begin(); it != &1.end(); ++i) {
+for (List<int>::Iterator it = l1.begin(); it != l1.end(); ++i) {
 	cout << *it << endl;
 }
 ```
 #### OR
 ```C++
-for (auto n:&1) {
+for (auto n:l1) {
   cout << n << endl;
 }
 ```
