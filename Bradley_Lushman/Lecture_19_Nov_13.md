@@ -6,7 +6,7 @@ fill in first part of note
 
 - want subclasses to override superclass behaviour, but some aspects must stay the same
 
-**Eg.** there are red tutrles, + gree turtles.
+**Eg.** there are red turtles and green turtles.
 
 ```C++
 class Turtle {
