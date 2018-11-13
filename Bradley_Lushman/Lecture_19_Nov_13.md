@@ -1,8 +1,44 @@
 # CS246 - Lecture 19 - Nov 13, 2018
 
-fill in first part of note
+## Factory Method Pattern 
 
-## Template Method Pattern
+Write a video game with 2 kinds of enemies: turtles and bullets 
+
+- system randomly sends turtles & bullets, but bullets are more frequent in harder levels
+
+insert uml diagram
+
+- never know exactly which enemy comes next, so call turtle/bullet constructors directly
+- Instead, put a factory method in level that creates enemies
+
+```C++
+class Level {
+  public:
+    virtual Enemy * createEnemy() = 0; // factory method
+};
+
+class Easy : publlic Level {
+  public:
+    Enemy *createEnemy() override {
+      // create mostly turtles
+    }
+};
+
+class Hard : public Level {
+  public:
+    Enemy *createEnemy() override {
+      // mostly bullets
+    }
+};
+
+// Client:
+
+Level *l = ______
+Enemy *e = l->createEnemy();
+```
+
+
+## Template Method Pattern (best pattern - highly advocated for by the C++ community)
 
 - want subclasses to override superclass behaviour, but some aspects must stay the same
 
@@ -41,9 +77,9 @@ Generalization : the Non-virtual Interface (NVI) idiom
 
 #### Contradictory 
 - an interface to the client
-- indicates provided behaviour with pre/post conditions
+  - indicates provided behaviour with pre/post conditions
 - an interface to subclasses
-- a "host" to insert specialized behviour
+  - a "hook" to insert specialized behviour
 
 It is hard to seperate these ideas if they are tied to the same function
 
