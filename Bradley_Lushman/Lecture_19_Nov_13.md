@@ -6,7 +6,7 @@ Write a video game with 2 kinds of enemies: turtles and bullets
 
 - system randomly sends turtles & bullets, but bullets are more frequent in harder levels
 
-insert uml diagram
+![Factory pattern UML](Images/CS246_Lecture19_Nov_13_Factory_Method_Pattern.jpg "diagram showing factory pattern")
 
 - never know exactly which enemy comes next, so call turtle/bullet constructors directly
 - Instead, put a factory method in level that creates enemies
@@ -160,7 +160,7 @@ virtual methods - chosen based on the actual type (at runtime) of the receiving 
 
 What if you want to choose based on **two** objects?
 
-insert diagram
+![Visitor pattern UML](Images/CS246_Lecture19_Nov_13_Visitor_Pattern.jpg "diagram showing Visitor pattern")
 
 Want something like `virtual (Enemy, Weapon)::strike ();`
 
