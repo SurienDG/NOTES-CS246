@@ -228,7 +228,7 @@ class Book {
   public:
     ...
     
-    virtual void accept (BookVisitor &v) {v.visit {*this}}
+    virtual void accept (BookVisitor &v) {v.visit (*this); }
 };
 
 class Text: public Book {
