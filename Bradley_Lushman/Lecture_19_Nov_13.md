@@ -69,7 +69,7 @@ class GreenTurtle : public Turtle {
 }
 ```
 
-Subclasses can't change the way a turtle is drawn (board, shell, feet), but can change the way the shell is drawn 
+Subclasses can't change the way a turtle is drawn (head, shell, feet), but can change the way the shell is drawn 
 
 Generalization : the Non-virtual Interface (NVI) idiom
 
