@@ -198,7 +198,7 @@ XWindows + YWindows
 
 - then make the Impl struct a superclass:
 
-insert UML1
+![Pimpl Idiom UML](Images/CS246_Lecture20_Nov_15_Pimpl_Idiom.jpg "diagram showing Pimpl Idiom")
 
 pImpl idiom with a **class hierarchy of implementations** - call the **Bridge Pattern**
 
