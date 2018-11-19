@@ -204,4 +204,15 @@ pImpl idiom with a **class hierarchy of implementations** - call the **Bridge Pa
 
 ## Measures of Design Quality
 
+- coupling + cohesion 
+  
+**Coupling:** how much distinct porgram modules depend on each other.
+  
+   **Low**:
+  - modules communicate via function calls with basic parameters/results
+  - modules pass arrays/structs back + forth
+  - modules effect each other's control flow
+  
+**High**:
 
+- modules have access to each other's implementations (friends)
