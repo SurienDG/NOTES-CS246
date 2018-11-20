@@ -69,7 +69,7 @@ Have a class for interaction, that is separate from the game play classes.
 
 - separate the distinct notions of the data ("model") the presentation of the data ("view") and controller manipulation of the data ("controller")
 
-insert mvc uml diagram
+![MVC UML](Images/CS246_Lecture21_Nov_20_MVC.jpg "diagram showing MVC")
 
 By decoupling presentation and control, MVC promotes reuse.
 
