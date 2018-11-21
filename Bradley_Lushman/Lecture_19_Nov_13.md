@@ -181,12 +181,12 @@ class Turtle : public Enemy {
       w.strike (*this); // *this is a Turtle 
     }
 
-    class Bullet : public Enemy {
-      public:
-        void beStructBy (Weapon &w) override 
-        {
-          w.strike(*this); // *this is a Bullet
-        }
+};
+
+class Bullet : public Enemy {
+  public:
+    void beStructBy (Weapon &w) override {
+      w.strike(*this); // *this is a Bullet
     }
 };
 
