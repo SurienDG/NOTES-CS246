@@ -24,7 +24,7 @@ Memory is freed when the ref count reaches 0.
 (define l2 (cons 4 (rest l1)))
 ```
 
-insert memory diagram for lists
+![Memory Diagram for Racket Linked Lists](Images/CS246_Lecture22_Nov_22_Mem_Diagram_For_Lists.jpg "diagram showing Racket Linked Lists to show an application of shared pointers")
 
 Use the type of ptr that accurately reflects the ptr's ownership role.
 
