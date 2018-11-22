@@ -17,7 +17,7 @@ shared_ptrs maintain a **reference count** - count of all shared_ptrs pointing a
 
 Memory is freed when the ref count reaches 0.
 
-**Consider**:
+**Consider** (note: Below is written in Racket code):
 
 ```Racket
 (define l1 (cons 1 (cons 2 (cons 3 empty))))
@@ -30,7 +30,7 @@ Use the type of ptr that accurately reflects the ptr's ownership role.
 
 **Dramatically** fewer opportunities for leaks
 
-### Back to exceptioin safety:
+### Back to exception safety:
 
 3 levels of exception safety guarantees.
 
