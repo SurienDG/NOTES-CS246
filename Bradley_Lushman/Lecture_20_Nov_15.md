@@ -4,7 +4,7 @@
 
 class Book {
     public:
-        virtual void accept (Book vistor &v) {v.visit (*this)}
+        virtual void accept (Book vistor &v) {v.visit (*this); }
 };
 
 class Test: public Book {
