@@ -20,9 +20,11 @@ void f (const int *p) {
     ...
 }
 ```
-insert diagram explaining const correctness
 
-4. `dynamic_cast` - Is it safe to convert a `Book *` to a `Text *`?
+![Diagram Explaining Const](Images/CS246_Lecture23_Nov_27_Const_Poisoning.jpg "diagram showing what happens with const posioning one half const correct and other not")
+
+
+1. `dynamic_cast` - Is it safe to convert a `Book *` to a `Text *`?
 
 ```C++
 Book *pb = ________;
@@ -154,11 +156,11 @@ class C {
 };
 ```
 
-Insert vtable diagram
+![Vtable 1](Images/CS246_Lecture23_Nov_27_vtable_Diagram1.jpg "Showing vtable for C c,d;")
 
 **Eg.**
 
-Insert vtable diagrams for book and text
+![Vtable 2](Images/CS246_Lecture23_Nov_27_vtable_BookAndText.jpg "Showing vtable diagram for book and text")
 
 Calling a virtual method:
 
@@ -176,7 +178,7 @@ Therefore, virtual function calls incur a small cast.
 Concretely, how is an object laid out? - compiler-dependent.
 
 #### g++
- insert vtable diagram for how g++ does this
+ ![Vtable 3](Images/CS246_Lecture23_Nov_27_vtable_g++.jpg "Showing vtable diagram for how g++ does this")
 
  ```C++
  class A {
@@ -189,7 +191,7 @@ Concretely, how is an object laid out? - compiler-dependent.
  };
 
 ```
- insert vtable diagram for class A and B
+![Vtable 3](Images/CS246_Lecture23_Nov_27_vtable_A_AND_B.jpg "Showing vtable diagram for class A and B")
 
 - So we always know where the vptr is.
 
