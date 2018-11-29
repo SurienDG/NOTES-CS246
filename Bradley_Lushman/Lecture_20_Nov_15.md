@@ -4,7 +4,7 @@
 
 class Book {
     public:
-        virtual void accept (Book vistor &v) {v.visit (*this); }
+        virtual void accept (BookVistor &v) {v.visit (*this); }
 };
 
 class Test: public Book {
@@ -14,7 +14,7 @@ class Test: public Book {
 
 // etc
 
-class Book Visitor {
+class BookVisitor {
     public:
         virtual void visit (Book &b) = 0;
         virtual void visit (Text &t) = 0;
