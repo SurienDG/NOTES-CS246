@@ -1,5 +1,74 @@
 # CS246 - Lecture 24 - Nov 29, 2018
 
+## Multiple Inheritance
+
+A class can inherit from more than one class
+
+```C++
+class A { int a; }
+class B { int b; }
+
+class C : public A, public B { ... };
+```
+- has fields a and b
+
+insert diagram 1
+
+**Now consider:**
+
+```C++
+class A { int a; }
+class B { int a; }
+
+class C : public A, public B { ... };
+
+D d;
+d.a // what is this? Ambiguous
+
+// Need to say
+d.B::a
+d.C::a
+```
+insert diagram
+
+**Challenges:**
+What if we want a singular A?
+
+### Deadly Diamond
+
+Make `A` a **virtual base case** (virtual inheritance)
+
+```C++
+class B: virtual public A {...}
+class C: virtual public A {...}
+```
+
+How would this be laid out?
+
+insert diagram
+
+insert vtable diagrams
+
+What does g++ do?
+
+B needs to be laid out so we can find its A part - but the distance to the A part is not always the same.
+.
+insert diagram
+
+**Soln:** Location of base class object is stored in the vtable 
+
+Diagram doesn’t look like all of A, B, C, D simultaneously but slices of it do look like A, B, C, D
+Thus, ptr assignment among A, B, C, D changes the address shared in the ptr.
+
+```C++
+D *d = new D;
+A *a = d;
+```
+
+a and d will not contain the same A.
+d’s value shifted to point to the A part when assigning into A.
+`static_cast`/`dynamic_cast` will take this adjustment; `reinterpret_cast` will not.
+
 ## Template Functions
 
 ```C++
