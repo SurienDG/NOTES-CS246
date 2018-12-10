@@ -77,8 +77,113 @@ How general is this code?
 1. What can we use for Func?
 2. What can we use for InIter/OutIter? 
 
-
+----------------------------
+    
 1. Func - how is f used? f(*first) 
+   - `f` can be anything that can be called as a function
+
+Can write `operator()` for objects
+
+**eg.**
+```C++
+class Plus1 {
+    public:
+        int operator() (int n) { return n + 1; }
+};
+
+Plus1 p;
+p(4); // produces 5
+```
+
+```C++
+transform(v.begin(), v.end(), w.begin(), Plus1{});
+//                              ctor call  ^
+```
+**Generalize:**
+```C++
+class Plus {
+        int m;
+    public:
+        Plus(int m) m{m} {}
+        int operator() (int n) { return n + m; }
+};
+```
+```C++
+transform(v.begin(), v.end(), w.begin(), Plus{1});
+//                 called function objects  ^
+```
+
+Advantage of classes - can maintain state
+
+```C++
+class IncreasingPlus {
+        int m = 0;
+    public:
+        int operator() { return n + (m++); }
+        void reset() { m = 0;}
+};
+```
+
+```C++
+vector <int> v (5, 0); // 0 0 0 0 0
+vector <int> w = v; // 0 0 0 0 0
+
+transform (v.begin(), v.end(), w.begin(), IncreasingPlus{});
+
+// w = 0 1 2 3 4
+```
+
+**Consider:**
+
+How many ints in a vector `v` are even?
+
+```C++
+vector <int> v _______;
+bool even (int n) { return n % 2 == 0; }
+int x = count_if(v.begin(), v.end(), even);
+```
+
+Seems a waste to explicitly create the function even. 
+
+In Racket, we would use lambda.
+
+```C++
+int x = count_if(v.begin(), v.end(), [](int n) {return n % 2 == 0; });
+
+// [] is like lambda for C++
+```
+2. Iterators
+
+- apply the notion of iteration to other sources of data, e.g. streams.
+
+```C++
+#include <iterator>
+
+vector <int> v {1, 2, 3, 4, 5};
+ostream_iterator <int> out { cout, ", "};
+
+copy(v.begin(), v.end(), out); // Prints 1, 2, 3, 4, 5,
+
+vector <int> v {1, 2, 3, 4, 5};
+vector <int> w;
+copy (v.begin(), v.end(), w.begin()); // wrong
+```
+
+Remember - copy doesn't allocate space in `w` - it can't - it doesn't even know that `w` is iterating over a vector
+
+It doesn't know about `w` at all! Only has an iterator.
+
+But it we had an iterator whose assignment operator inserts a new item?
+
+```C++
+copy (v.begin(), v.end(), back_inserter(w)); // copies v to the of w, adding new entries
+
+// back_inserter() is available for any container with a push_back method.
+```
+
+
+
+
 
 
 
