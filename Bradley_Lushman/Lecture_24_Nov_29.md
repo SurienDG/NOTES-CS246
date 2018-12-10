@@ -12,15 +12,16 @@ class C : public A, public B { ... };
 ```
 - has fields a and b
 
-insert diagram 1
+![Diagram Showing Multiple Inheritance](Images/CS246_Lecture23_Nov_29_multiple_inheritance_diagram1.jpg "classes A and B Multiple Inheritance")
 
 **Now consider:**
 
 ```C++
-class A { int a; }
-class B { int a; }
 
-class C : public A, public B { ... };
+class A { int a; }
+class B : public A { int b; }
+class C : public A { ... }
+class D : public A, public B { ... };
 
 D d;
 d.a // what is this? Ambiguous
@@ -29,7 +30,7 @@ d.a // what is this? Ambiguous
 d.B::a
 d.C::a
 ```
-insert diagram
+![Multiple Inheritance (Ambiguous)](Images/CS246_Lecture23_Nov_29_multiple_inheritance_diagram2.jpg "Diagram Showing Multiple Inheritance (Ambiguous)")
 
 **Challenges:**
 What if we want a singular A?
@@ -45,15 +46,15 @@ class C: virtual public A {...}
 
 How would this be laid out?
 
-insert diagram
+![Multiple Inheritance (Deadly Triangle)](Images/CS246_Lecture23_Nov_29_multiple_inheritance_diagram3.jpg "Diagram Showing Multiple Inheritance (Deadly Triangle)")
 
-insert vtable diagrams
+![Multiple Inheritance (Vtable)](Images/CS246_Lecture23_Nov_29_multiple_inheritance_diagram4.jpg "Diagram Showing Multiple Inheritance (Vtable)")
 
 What does g++ do?
 
 B needs to be laid out so we can find its A part - but the distance to the A part is not always the same.
-.
-insert diagram
+
+![Multiple Inheritance (Vtable g++)](Images/CS246_Lecture23_Nov_29_multiple_inheritance_vtable_g++.jpg "Diagram Showing Multiple Inheritance (Vtable g++)")
 
 **Soln:** Location of base class object is stored in the vtable 
 
