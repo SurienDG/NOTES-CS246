@@ -88,7 +88,7 @@ Text &Text::operator= (const Book &other) { //virtual
     const Text &textOther = dynamic_cast<const Text &>(other); // throws if other is not a Text
     if (this == &textOther) return *this;
     Book::operator = (other);
-    other = textOther.topic;
+    topic = textOther.topic;
     return *this;
 }
 ```
