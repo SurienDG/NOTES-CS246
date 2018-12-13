@@ -114,7 +114,7 @@ for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
 #### Or
 
 ```C++
-for (auto n = v) {
+for (auto n : v) {
 	cout << n << endl;
 }
 ```
