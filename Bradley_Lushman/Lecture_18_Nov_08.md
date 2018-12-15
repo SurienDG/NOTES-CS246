@@ -72,7 +72,7 @@ class Subject {
       observers.emplace_back (ob); 
     }
 
-    void attach (Observer *ob); // remove from observers
+    void deattach (Observer *ob); // remove from observers
     void notifyObservers () {
       for (auto &ob:observers) ob->notify();
     }
