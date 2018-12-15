@@ -206,7 +206,7 @@ pImpl idiom with a **class hierarchy of implementations** - call the **Bridge Pa
 
 - coupling + cohesion 
   
-**Coupling:** how much distinct porgram modules depend on each other.
+**Coupling:** how much distinct program modules depend on each other.
   
    **Low**:
   - modules communicate via function calls with basic parameters/results
